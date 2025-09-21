@@ -7,7 +7,7 @@ HISTORY_FILE = "history.txt"
 # Helper: read history from file
 def read_history():
     try:
-        with open(HISTORY_FILE, "r") as f:
+        with open(HISTORY_FILE, "r", encoding="utf-8") as f:
             lines = f.readlines()
             history = []
             for line in lines:
@@ -37,7 +37,7 @@ def home():
             result = "✅ Request looks safe."
 
         # Save to file
-        with open(HISTORY_FILE, "a") as f:
+        with open(HISTORY_FILE, "a", encoding="utf-8") as f:
             f.write(f"{user_request} -> {result}\n")
 
     return render_template('index.html', result=result)
