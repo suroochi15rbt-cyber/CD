@@ -1,3 +1,4 @@
+
 # WAFinity - Infinite Protection, Intelligent Detection
 
 **WAFinity** is an Advanced Web Application Firewall (WAF) that protects web applications from known threats such as SQL injection, Cross-Site Scripting (XSS), and other similar attacks by filtering and monitoring HTTP traffic between the application and the Internet.
@@ -163,3 +164,5 @@ MIT License
 git add README.md
 git commit -m "Add README.md"
 git push
+
+
