@@ -26,15 +26,15 @@ def home():
 
         # Threat checks
         if "<script>" in user_request.lower():
-            result = "⚠️ Potential XSS detected!"
+            result = "[Alert] Potential XSS detected!"
         elif "drop" in user_request.lower() or "delete" in user_request.lower():
-            result = "⚠️ SQL/DB threat detected!"
+            result = "[Alert] SQL/DB threat detected!"
         elif "../" in user_request.lower():
-            result = "⚠️ Path Traversal threat detected!"
+            result = "[Alert] Path Traversal threat detected!"
         elif "rm -rf" in user_request.lower():
-            result = "⚠️ Command Injection detected!"
+            result = "[Alert] Command Injection detected!"
         else:
-            result = "✅ Request looks safe."
+            result = "[Safe] Request looks safe."
 
         # Save to file
         with open(HISTORY_FILE, "a", encoding="utf-8") as f:
