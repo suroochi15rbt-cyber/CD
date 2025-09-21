@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>Request History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Security Request History</h1>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Request</th>
+            <th>Result</th>
+        </tr>
+        {% for entry in history %}
+        <tr>
+            <td>{{ entry.request }}</td>
+            <td>{{ entry.result }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/home">⬅ Back to Home</a>
+</body>
+</html>
