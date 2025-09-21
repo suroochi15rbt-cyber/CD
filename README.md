@@ -1,7 +1,7 @@
 
-# WAFinity - Infinite Protection, Intelligent Detection
+# SentriAI - Infinite Protection, Intelligent Detection
 
-**WAFinity** is an Advanced Web Application Firewall (WAF) that protects web applications from known threats such as SQL injection, Cross-Site Scripting (XSS), and other similar attacks by filtering and monitoring HTTP traffic between the application and the Internet.
+**SentriAI** is an Advanced Web Application Firewall (WAF) that protects web applications from known threats such as SQL injection, Cross-Site Scripting (XSS), and other similar attacks by filtering and monitoring HTTP traffic between the application and the Internet.
 
 In addition to signature-based detection, it uses **machine learning-based anomaly detection** to identify obfuscated, zero-day, and previously unknown attacks by analyzing patterns and behaviors in incoming requests.
 
@@ -135,10 +135,10 @@ Host: www.example.com
 
 bash
 ```
-git clone https://github.com/YOUR_USERNAME/Advanced-WAF-WAFinity.git
+git clone https://github.com/YOUR_USERNAME/Advanced-WAF-SentriAI.git
 ```
 ```
-cd Advanced-WAF-WAFinity
+cd Advanced-WAF-SentriAI
 ```
 
 2. Install dependencies:
