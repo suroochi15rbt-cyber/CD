@@ -25,16 +25,20 @@ def home():
         user_request = request.form['request']
 
         # Threat checks
-        if "<script>" in user_request.lower():
-            result = "[Alert] Potential XSS detected!"
-        elif "drop" in user_request.lower() or "delete" in user_request.lower():
-            result = "[Alert] SQL/DB threat detected!"
-        elif "../" in user_request.lower():
-            result = "[Alert] Path Traversal threat detected!"
-        elif "rm -rf" in user_request.lower():
-            result = "[Alert] Command Injection detected!"
-        else:
-            result = "[Safe] Request looks safe."
+        if "<script>" in lower:
+    result = "⚠️ Potential XSS detected!"
+elif re.search(r'on\w+\s*=', lower):  # matches onload=, ontoggle=, etc.
+    result = "⚠️ XSS via event handler detected!"
+elif "function(" in lower or "alert(" in lower or "eval(" in lower:
+    result = "⚠️ JavaScript execution attempt detected!"
+elif "drop" in lower or "delete" in lower:
+    result = "⚠️ SQL/DB threat detected!"
+elif "../" in lower:
+    result = "⚠️ Path Traversal threat detected!"
+elif "rm -rf" in lower:
+    result = "⚠️ Command Injection detected!"
+else:
+    result = "✅ Request looks safe."
 
         # Save to file
         with open(HISTORY_FILE, "a", encoding="utf-8") as f:
