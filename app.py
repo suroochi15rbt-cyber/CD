@@ -26,7 +26,7 @@ def home():
 
         # Threat checks
         if "<script>" in lower:
-    result = "⚠️ Potential XSS detected!"
+            result = "⚠️ Potential XSS detected!"
 elif re.search(r'on\w+\s*=', lower):  # matches onload=, ontoggle=, etc.
     result = "⚠️ XSS via event handler detected!"
 elif "function(" in lower or "alert(" in lower or "eval(" in lower:
